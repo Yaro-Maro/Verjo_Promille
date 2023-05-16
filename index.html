@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promille Berekenen</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div id="container">
+
+    <!-- TITLE -->
+    <section class="title">
+        <img src="img/logo_verjo.png" alt="">
+        <h1><i>Hoeveel promille? Bereken het!</i></h1>
+        <img src="img/logo_leerhetverkeer.png" alt="">
+    </section>
+
+    <!-- FORM -->
+    <section>
+        <form class="form-panels" action="">
+            <!-- weight -->
+            <div class="panel">
+                <p class="panel-title">Gewicht</p>
+                <div class="input">
+                    <input type="number" value="60" min="40" max="200" id="weight" name="weight">
+                    <div class="butt-container">
+                        <button onclick="arrowFunctions('weightUp');" type="button" id="butt-weight--up">&#x25b2;</button>
+                        <button onclick="arrowFunctions('weightDown');" type="button" id="butt-weight--down">&#x25BC;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- glasses -->
+            <div>
+                <p class="panel-title">Aantal Glazen</p>
+                <div class="input">
+                    <input type="number" value="1" min="1" max="10" id="glasses" name="glasses">
+                    <div class="butt-container">
+                        <button onclick="arrowFunctions('glassesUp');" type="button" id="butt-glasses--up">&#x25b2;</button>
+                        <button onclick="arrowFunctions('glassesDown');" type="button" id="butt-glasses--down">&#x25BC;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- gender -->
+            <div>
+                <p class="panel-title">Geslacht:</p>
+                <div class="input">
+                    <div class="gender-container">
+                        <label for="male">Man&nbsp;&#8202;&#8202;&#8202;&#8202;&#8202;&#8202;&#8202;&#8202;&#8202;&#8202;&#8202;</label>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <br>
+                        <label for="female">Vrouw&nbsp;</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- RESULT -->
+    <!-- Fines table -->
+    <section class="result">
+        <table class="consequences-list">
+            <tr>
+                <td colspan="4" style="text-align: center;">Consequencies<br><i>(Bij meteen rijden)</i>:</td>
+            </tr>
+            <tr class="tr_spacing"></tr>
+
+            <tr id="fine1" style="visibility:hidden">
+                <td width="60px">0,5 &permil;&nbsp;</td>
+                <td class="fine">~&#x20AC;325,-</td>
+                <td style="text-align: center;"></td>
+                <td></td>
+            </tr>
+
+            <tr class="tr_spacing"></tr>
+            
+            <tr id="fine2" style="visibility:hidden">
+                <td>0,8 &permil;&nbsp;</td>
+                <td class="fine">~&#x20AC;425,-</td>
+                <td style="text-align: center;">+ LEMA-Cursus</td>
+                <td class="fine--course">~&#x20AC;600,-</td>
+            </tr>
+
+            <tr class="tr_spacing"></tr>
+
+            <tr id="fine3" style="visibility:hidden">
+                <td>1,0 &permil;&nbsp;</td>
+                <td class="fine">~&#x20AC;700,-</td>
+                <td style="text-align: center;">+ EMA-Cursus</td>
+                <td class="fine--course">~&#x20AC;1000,-</td>
+            </tr>
+
+            <tr class="tr_spacing"></tr>
+
+            <tr id="fine4" style="visibility:hidden">
+                <td>1,3 &permil;&nbsp;</td>
+                <td class="fine">~&#x20AC;950,-</td>
+                <td style="text-align: center;">+ Psychiater</td>
+                <td class="fine--course">~&#x20AC;1150,-</td>
+            </tr>
+
+            <tr class="tr_spacing"></tr>
+            <tr class="tr_spacing"></tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="center"><img onclick="displayInfo();" id="verjo-info_2" src="img/verjo-button-info.png" alt="verjo-info"></td>
+            </tr>
+
+        </table>
+        <table class="promille">
+            <tr>
+                <td class="remove-border center" rowspan="8">tijd<br>vanaf<br>1e glas</td>
+                <td class="center" rowspan="8"><img  class="accolade" src="img/accolade.jpg" alt=""></td>
+                <td width="80px">na 1 uur:</td>
+                <td width="60px" id="1glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+            <tr>
+                <td>na 2 uur:</td>
+                <td id="2glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+            <tr>
+                <td>na 3 uur:</td>
+                <td id="3glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+            <tr>
+                <td>na 4 uur:</td>
+                <td id="4glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+            <tr>
+                <td>na 5 uur:</td>
+                <td id="5glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+            <tr>
+                <td>na 6 uur:</td>
+                <td id="6glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+            <tr>
+                <td>na 7 uur:</td>
+                <td id="7glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+            <tr>
+                <td>na 8 uur:</td>
+                <td id="8glass" class="remove-border"></td>
+                <td>&permil;</td>
+            </tr>
+        </table>
+        <div class="beer-items">
+            <img onclick="displayInfo();" id="verjo-info" src="img/verjo-button-info.png" alt="verjo-info">
+            <div class="beer-bottles">
+                <img style="visibility:hidden" id="bottle1" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle2" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle3" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle4" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle5" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle6" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle7" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle8" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle9" src="img/beer-bottle.png" alt="beer-bottle">
+                <img style="visibility:hidden" id="bottle10" src="img/beer-bottle.png" alt="beer-bottle">
+            </div>
+        
+
+            
+        </div>
+    </section>
+
+    <!-- EXPLANATION -->
+    <section style="visibility:hidden" id="explanation">
+        <ol><i>
+            <li>* Dit geldt alléén voor <b>ervaren</b> bestuurders (<b>langer dan 5 jaar een rijbewijs</b>).</li>
+            <li>Vrijwel alle normale glazen bier, wijn, gedistilleerd en longdrink bevatten evenveel alcohol: 10-12 gram.</li>
+            <li>Bij een bloedalcoholgehalte boven 0,50 &permil; (op tabel in het rood) is in Nederland deelname aan het verkeer strafbaar. in België boven 0.80 &permil;.</li>
+            <li>Ook bij minder dan 0,50 &permil; kan gevaarlijke beïnvloeding optreden. In dat geval is de verkeersdeelnemer eveneens strafbaar.</li>
+            <li>Deze waarden zijn gemiddelden. De uitgever aanvaardt geen aansprakelijkheid voor individuele afwijkingen.</li>
+       </i>
+        </ol>
+    </section>
+
+
+</div>    
+</body>
+</html>

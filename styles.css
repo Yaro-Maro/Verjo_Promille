@@ -1,0 +1,362 @@
+/* 
+1200
+989
+768 still big */
+
+/* TODO: Change accolade to be 20px when screen is smaller, and then make  */
+
+:root {
+    --gap: 10px;
+}
+
+
+body {
+    background-color: #abdef8;
+    font-size: 15px;
+    font-family: Tahoma, Arial;
+    margin: 0;
+}
+
+img {
+    display: inline-block;
+    height: 50px
+}
+
+li {
+    margin-bottom: 2em;
+}
+
+#container { /* The entire  */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    max-width: 1100px;
+    width: 90%;
+    margin: auto;
+    margin-top: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Works for Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+
+
+/* TITLE */
+section.title { /* Blue bar on the top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100%; */
+    height: 50px;
+    padding: 10px;
+    background-color: #2f6eb2;
+}
+
+    section.title > * { /* All elements of top blue bar */
+        flex-basis: 100;
+    }
+
+    section.title > h1 { /* Heading at the top */
+        font-size: 25px;
+        padding: 10px;
+        color: white;
+    }
+
+
+
+
+/* FORM */
+form.form-panels { /* form */
+    display: flex;
+    gap: var(--gap);
+    height: 120px;
+}
+
+    form.form-panels > * { /* select weight, glasses and gender */
+        flex-basis: 2000px;
+        width: 30%;
+        background-color: white;
+    }
+
+.panel-title  {
+    text-align: center;
+}
+
+
+div.input {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}    
+
+div.butt-container {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+
+input[type="number"] {
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* input[type="radio"][id="male"] {
+    margin-right: 40px;
+} */
+
+input[type=radio] {
+    border: 0px;
+    width: 50px;
+    height: 1.5em;
+}
+
+label {
+    font-size: 20px;
+}
+
+button {
+    height: 28px;
+}
+
+    button:hover {
+        cursor: pointer;
+    }
+
+#butt-weight--up, #butt-weight--down {
+    background-color: #20912d;
+    border-color:  #20912d;
+    border-radius: 3px;
+}
+
+#butt-glasses--up, #butt-glasses--down {
+    background-color: #f29400;
+    border-color:  #f29400;
+    border-radius: 3px;
+}
+
+
+/* RESULT */
+section.result {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap);
+    background-color: white;
+}
+
+    section.result > * {
+        flex-basis: 500px;
+        background-color: white;
+        height: 450px;
+
+    }
+
+table.promille, table.promille td {
+    border: 1px solid #0e71b892;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+td.remove-border {
+    border-right: 1px solid rgba(0, 0, 0, 0);
+}
+
+table.promille {
+    margin: 25px 0;
+    border-radius: 5px;
+}
+
+
+
+table.consequences-list {
+    position: relative;
+    padding: 10px 20px;
+}  
+
+    table.consequences-list tr {
+        height: 45px;
+    }
+
+
+    td.fine {
+        padding: 0;
+        background-color: #20912d;
+        border: 3px solid white;
+        outline: 3px solid #20912d;
+    }
+
+    td.fine--course {
+        padding: 0;
+        background-color: #0e71b8;
+        border: 3px solid white;
+        outline: 3px solid #0e71b8;
+    }
+
+    table.consequences-list tr.tr_spacing {
+        height: 32px;
+    }
+
+
+
+img.accolade {
+    padding: 0;
+    height: 100%;
+    width: 30px;
+}
+
+.center {
+    text-align: center;
+
+}
+
+.gender-container {
+    line-height: 2em;
+    margin: -0.5em;
+}
+
+
+/* BEER BOTTLES */
+.beer-items {
+    position: relative; /* Needed for absolute positioning of verjo-info */
+}
+
+.beer-bottles {
+    display: flex;
+    margin: 30px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap:var(--gap)
+}
+
+.beer-bottles  > * {
+    width: 3.1vw;
+    min-width: 10px;
+    max-width: 50px;
+    height: auto;
+}
+
+
+/* EXPLANATION */
+section#explanation {
+    background-color: white;
+}
+
+#verjo-info {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    bottom: -40px;
+}
+
+    #verjo-info:hover {
+        cursor: pointer;
+    }
+
+
+#verjo-info_2 {
+    float: right;
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+    #verjo-info_2:hover {
+        cursor: pointer;
+    }
+
+
+
+
+/* MEDIA QUERY */    
+
+/* Change element sizaes with smaller screen */
+@media screen and (max-width: 1045px) {
+    .beer-items {
+        max-width: 220px;
+    }
+
+
+    /* Change sizes */
+    section.title > h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .beer-items {
+        max-width: 150px;
+    }
+}
+
+
+
+/* Realign everything */
+@media screen and (max-width: 768px) {
+    /* Change beer items to 100% again */
+    .beer-items {
+        max-width: 100%;
+    }
+
+    /* Adjust results flex container for new layout */
+     section.result {
+      flex-direction: column;
+      gap: 10px;
+      background: none;
+    }
+
+    section.result > * {
+        width: 100%;
+    }
+
+    /* Reorder flex-container items */
+    div.beer-items {
+        max-height: 150px; /* make beer container smaller */
+    }
+
+    table.promille {
+        order: 1;
+    }
+
+    table.consequences-list {
+        order: 2;
+    }
+
+    /* Remove promille table margin */
+    table.promille {
+        margin: 0px;
+    }
+
+    /* Change location of info buttons */
+    #verjo-info {
+        display: none;
+    }
+
+    #verjo-info_2 {
+        display: inline;
+    }
+
+    /* Hide title */
+    h1 {
+        display: none;
+    }
+
+    
+
+  }
+
+
+
