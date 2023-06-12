@@ -37,16 +37,13 @@ function recordValues() {
       }
    }
    
-   // dispaly beer bottles
-   if (glasses != 0) {
-      revealBeers(glasses);
-   }
-
+   
    // output
    if (weight && glasses && R != null) {
       calculateValues(weight, glasses, R);
+      // dispaly beer bottles
+      revealBeers(glasses);
    }
-   
 }
 
 // used for calculation of promile
