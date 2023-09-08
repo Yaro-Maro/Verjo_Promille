@@ -30,8 +30,9 @@ li {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    max-width: 1100px;
     width: 90%;
+    max-width: 1100px;
+    min-width: 520px;
     margin: auto;
     margin-top: 0;
     padding: 0;
@@ -82,11 +83,12 @@ form.form-panels { /* form */
     height: 120px;
 }
 
-    form.form-panels > * { /* select weight, glasses and gender */
-        flex-basis: 2000px;
-        width: 30%;
+    form.form-panels > * { /* select weight, glasses, gender and driver */
+        width: 25%;
         background-color: white;
     }
+
+    
 
 .panel-title  {
     text-align: center;
@@ -182,7 +184,7 @@ table.promille {
 
 
 table.consequences-list {
-    position: relative;
+    /* position: relative; */
     padding: 10px 20px;
 }  
 
@@ -222,7 +224,7 @@ img.accolade {
 
 }
 
-.gender-container {
+.gender-container, .driver-container {
     line-height: 2em;
     margin: -0.5em;
 }
@@ -267,23 +269,17 @@ section#explanation {
     }
 
 
-#verjo-info_2 {
-    float: right;
-    display: none;
-    width: 40px;
-    height: 40px;
+
+.sub-list {
+    line-height: 10%;
+    margin-top: -0.8em;
 }
-
-    #verjo-info_2:hover {
-        cursor: pointer;
-    }
-
 
 
 
 /* MEDIA QUERY */    
 
-/* Change element sizaes with smaller screen */
+/* Change element sizes with smaller screen */
 @media screen and (max-width: 1045px) {
     .beer-items {
         max-width: 220px;
@@ -300,12 +296,25 @@ section#explanation {
     .beer-items {
         max-width: 150px;
     }
+
+    .driver-container > label, .gender-container > label {
+        font-size: 18px;
+    }
 }
 
 
 
 /* Realign everything */
 @media screen and (max-width: 768px) {
+
+    .driver-container > label, .gender-container > label {
+        font-size: 15px;
+    }
+    .driver-container > input, .gender-container > input {
+        font-size: 12px;
+    }   
+
+
     /* Change beer items to 100% again */
     .beer-items {
         max-width: 100%;
@@ -313,7 +322,7 @@ section#explanation {
 
     /* Adjust results flex container for new layout */
      section.result {
-      flex-direction: column;
+      flex-direction: column-reverse;
       gap: 10px;
       background: none;
     }
@@ -324,16 +333,9 @@ section#explanation {
 
     /* Reorder flex-container items */
     div.beer-items {
-        max-height: 150px; /* make beer container smaller */
+        max-height: 120px; /* make beer container smaller */
     }
 
-    table.promille {
-        order: 1;
-    }
-
-    table.consequences-list {
-        order: 2;
-    }
 
     /* Remove promille table margin */
     table.promille {
@@ -342,12 +344,13 @@ section#explanation {
 
     /* Change location of info buttons */
     #verjo-info {
-        display: none;
+        width: 40px;
+        height: auto;
+        position: absolute;
+        right: 20px;
+        bottom: -1000px;
     }
 
-    #verjo-info_2 {
-        display: inline;
-    }
 
     /* Hide title */
     h1 {
@@ -356,6 +359,17 @@ section#explanation {
 
     
 
+  }
+
+
+  @media screen and (max-width: 650px) {
+    .driver-container > label, .gender-container > label {
+        font-size: 12px;
+    }
+
+    .driver-container > input, .gender-container > input {
+        font-size: 12px;
+    }   
   }
 
 

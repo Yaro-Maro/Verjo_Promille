@@ -58,63 +58,132 @@
                     </div>
                 </div>
             </div>
+
+            <!-- bestuurder -->
+            <!-- <div>
+                <p class="panel-title">Bestuurder:</p>
+                <div class="input">
+                    <div class="driver-container">
+                        <label for="beginner">Beginnend (<5 jaar)</label>
+                        <input type="radio" id="beginner" name="driver" value="beginner">
+                        <br>
+                        <label for="experienced">Ervaren &nbsp;&nbsp;&nbsp;&#8202;&#8202;&#8202;&#8202;(&#8202; 5 jaar &#8202;)</label>
+                        <input type="radio" id="experienced" name="driver" value="experienced">
+                    </div>
+                </div>
+            </div> -->
+
+            <div>
+                <p class="panel-title">Bestuurder:</p>
+                <div class="input">
+                    <div class="driver-container">
+                        <label for="beginner">Beginnend* </label>
+                        <input style="float:right" type="radio" id="beginner" name="driver" value="beginner">
+                        <br>
+                        <label for="experienced">Ervaren</label>
+                        <input style="float:right" type="radio" id="experienced" name="driver" value="experienced">
+                    </div>
+                </div>
+            </div>
         </form>
     </section>
 
-    <!-- RESULT -->
-    <!-- Fines table -->
+    <!-- CONSEQUENCES -->
+    <!-- Consequences label-->
     <section class="result">
-        <table class="consequences-list">
-            <tr>
-                <td colspan="4" style="text-align: center;">Consequencies<br><i>(Bij meteen rijden)</i>:</td>
-            </tr>
-            <tr class="tr_spacing"></tr>
+        <div class="consequences-list_container">
+            <table class="consequences-list" style="margin:auto">
+                <tr>
+                    <td colspan="4" style="text-align: center;">Consequenties<br>
+                        <br id="extraSpace" style="display:inline"> <!-- used so text doesn't jump -->
+                        <span id="beginnerDriverText" style="display: none"><b>Beginnend bestuurder</b><br></span>
+                        <span id="experiencedDriverText" style="display: none"><b>Ervaren bestuurder</b><br></span>
+                        <i>(Bij vroeg wegrijden)</i>:
+                    </td>
+                </tr>
+                <tr class="tr_spacing"></tr>
+            </table>
 
-            <tr id="fine1" style="visibility:hidden">
-                <td width="60px">0,5 &permil;&nbsp;</td>
-                <td class="fine">~&#x20AC;325,-</td>
-                <td style="text-align: center;"></td>
-                <td></td>
-            </tr>
+            <!-- Fines for beginner driver-->
+            <div id="beginnerDriverFines" style="display:none">  
+                <table class="consequences-list">
+                    <tr id="fine1b" style="visibility:hidden;">
+                        <td width="60px">0,3 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;"></td>
+                        <td></td>
+                    </tr>
 
-            <tr class="tr_spacing"></tr>
-            
-            <tr id="fine2" style="visibility:hidden">
-                <td>0,8 &permil;&nbsp;</td>
-                <td class="fine">~&#x20AC;425,-</td>
-                <td style="text-align: center;">+ LEMA-Cursus</td>
-                <td class="fine--course">~&#x20AC;600,-</td>
-            </tr>
+                    <tr class="tr_spacing"></tr>
+                    
+                    <tr id="fine2b" style="visibility:hidden">
+                        <td>0,5 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;">&nbsp;+ LEMA-Cursus&nbsp;</td>
+                        <td class="fine--course">~&#x20AC;258,-</td>
+                    </tr>
 
-            <tr class="tr_spacing"></tr>
+                    <tr class="tr_spacing"></tr>
 
-            <tr id="fine3" style="visibility:hidden">
-                <td>1,0 &permil;&nbsp;</td>
-                <td class="fine">~&#x20AC;700,-</td>
-                <td style="text-align: center;">+ EMA-Cursus</td>
-                <td class="fine--course">~&#x20AC;1000,-</td>
-            </tr>
+                    <tr id="fine3b" style="visibility:hidden">
+                        <td>0,8 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;">+ EMA-Cursus</td>
+                        <td class="fine--course">~&#x20AC;666,-</td>
+                    </tr>
 
-            <tr class="tr_spacing"></tr>
+                    <tr class="tr_spacing"></tr>
 
-            <tr id="fine4" style="visibility:hidden">
-                <td>1,3 &permil;&nbsp;</td>
-                <td class="fine">~&#x20AC;950,-</td>
-                <td style="text-align: center;">+ Psychiater</td>
-                <td class="fine--course">~&#x20AC;1150,-</td>
-            </tr>
+                    <tr id="fine4b" style="visibility:hidden">
+                        <td>1,3 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;">+ Onderzoek</td>
+                        <td class="fine--course">~&#x20AC;882,-</td>
+                    </tr>
+                </table>
+            </div>
 
-            <tr class="tr_spacing"></tr>
-            <tr class="tr_spacing"></tr>
+            <!-- Fines for experienced driver-->
+            <div id="experiencedDriverFines" style="display:none">  
+                <table class="consequences-list">
+                    <tr id="fine1e" style="visibility:hidden;">
+                        <td width="60px">0,3 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;"></td>
+                        <td></td>
+                    </tr>
 
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="center"><img onclick="displayInfo();" id="verjo-info_2" src="img/verjo-button-info.png" alt="verjo-info"></td>
-            </tr>
+                    <tr class="tr_spacing"></tr>
+                    
+                    <tr id="fine2e" style="visibility:hidden">
+                        <td>0,8 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;">&nbsp;+ LEMA-Cursus&nbsp;</td>
+                        <td class="fine--course">~&#x20AC;258,-</td>
+                    </tr>
 
-        </table>
+                    <tr class="tr_spacing"></tr>
+
+                    <tr id="fine3e" style="visibility:hidden">
+                        <td>1,0 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;">+ EMA-Cursus</td>
+                        <td class="fine--course">~&#x20AC;666,-</td>
+                    </tr>
+
+                    <tr class="tr_spacing"></tr>
+
+                    <tr id="fine4e" style="visibility:hidden">
+                        <td>1,8 &permil;&nbsp;</td>
+                        <td class="fine">~&#x20AC;433,-</td>
+                        <td style="text-align: center;">+ Onderzoek</td>
+                        <td class="fine--course">~&#x20AC;882,-</td>
+                    </tr>
+                </table>
+            </div>
+         </div>
+
+        <!-- Display bottles of beer -->
         <table class="promille">
             <tr>
                 <td class="remove-border center" rowspan="8">tijd<br>vanaf<br>1e glas</td>
@@ -181,13 +250,19 @@
 
     <!-- EXPLANATION -->
     <section style="visibility:hidden" id="explanation">
-        <ol><i>
-            <li>* Dit geldt alléén voor <b>ervaren</b> bestuurders (<b>langer dan 5 jaar een rijbewijs</b>).</li>
-            <li>Vrijwel alle normale glazen bier, wijn, gedistilleerd en longdrink bevatten evenveel alcohol: 10-12 gram.</li>
-            <li>Bij een bloedalcoholgehalte boven 0,50 &permil; (op tabel in het rood) is in Nederland deelname aan het verkeer strafbaar. in België boven 0.80 &permil;.</li>
-            <li>Ook bij minder dan 0,50 &permil; kan gevaarlijke beïnvloeding optreden. In dat geval is de verkeersdeelnemer eveneens strafbaar.</li>
-            <li>Deze waarden zijn gemiddelden. De uitgever aanvaardt geen aansprakelijkheid voor individuele afwijkingen.</li>
-       </i>
+        <ol>
+            <i>
+                <li>* U bent beginnend bestuurder als:</li>
+                <ul class="sub-list">
+                    <li>Rijbewijs gehaald op 18 jaar, dan <b>5 jaar</b></li>
+                    <li>(B) Rijbewijs gehaald op 17 jaar, dan <b>5 jaar</b></li>
+                    <li>(AM) of (T) Rijbewijs gehaald op 16/17 jaar, dan <b>7 jaar</b></li>  
+                </ul>
+                <li>Vrijwel alle normale glazen bier, wijn, gedistilleerd en longdrink bevatten evenveel alcohol: 10-12 gram.</li>
+                <li>Bij een bloedalcoholgehalte boven 0,50 &permil; (op tabel in het rood) is in Nederland deelname aan het verkeer strafbaar.</li>
+                <li>Ook bij minder dan 0,50 &permil; kan gevaarlijke beïnvloeding optreden. In dat geval is de verkeersdeelnemer eveneens strafbaar.</li>
+                <li>Deze waarden zijn gemiddelden. De uitgever aanvaardt geen aansprakelijkheid voor individuele afwijkingen.</li>
+            </i>
         </ol>
     </section>
 
