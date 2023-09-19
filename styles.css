@@ -369,7 +369,11 @@ section#explanation {
 
     .driver-container > input, .gender-container > input {
         font-size: 12px;
-    }   
+    }  
+    
+    .driver-container > label {
+        margin-left: 0.8em;
+    }
   }
 
 
